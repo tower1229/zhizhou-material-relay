@@ -1,0 +1,1 @@
+export var baseApi = 'http://lowcode.sdzhizhou.com';

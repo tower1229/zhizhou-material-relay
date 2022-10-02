@@ -1,0 +1,45 @@
+@import '../../variables.scss';
+
+#{$biz-css-prefix}-colorful-button {
+  border: 2px dashed blue;
+}
+
+.complex-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.complex-content {
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: center;
+  margin-left:10px;
+}
+.complex-inp{
+  width:140px;
+  display: flex;
+  flex-direction: row;
+  justify-content:flex-start;
+  align-items: center;
+  margin-left:10px;
+}
+.complex-content:nth-child(1){
+  margin-left:10px;
+}
+.complex-content:nth-child(2){
+  margin-left:10px;
+}
+.complex-inp>.ant-input-number{
+  width:120px;
+}
+// .ant-select ant-cascader ant-select-single ant-select-allow-clear ant-select-show-arrow{
+//   width:140px;
+// }
+.btn{
+  margin-left:30px;
+}
+
