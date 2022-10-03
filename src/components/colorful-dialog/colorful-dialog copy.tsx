@@ -9,18 +9,22 @@ import { Modal, message } from 'antd';
 
 import Bus from '../../utils/eventBus';
 
-export interface ColorfulDialogProps {
-  key: React.Key;
-  visible: boolean;
-  name: string;
-  width: number;
-  title: string;
-  footer?: React.ReactElement;
-}
+// type selfProps = {
+//   getShow: Function;
+//   getUser: Function;
+// };
+
+export const ColorfulDialogProps = {
+  key: React.key,
+  id: PropTypes.number,
+  width: PropTypes.number,
+  visible: PropTypes.bool,
+  footer: PropTypes.element,
+};
 
 class ColorfulDialog extends React.Component {
   static getDerivedStateFromProps(props, state) {
-    console.warn('getDerivedStateFromProps', props);
+    console.warn('getDerivedStateFromProps');
     return {
       visible: props.visible,
     };
@@ -28,12 +32,14 @@ class ColorfulDialog extends React.Component {
 
   constructor(props) {
     super(props);
+    console.warn('constructor');
     this.state = {
       visible: props.visible,
     };
   }
 
   componentDidMount() {
+    console.log('componentDidMount', this.props);
     if (this.props.__designMode === 'design') {
       // 低代码编辑态中强制显示，将控制权交给引擎侧
       this.setState({
@@ -69,21 +75,27 @@ class ColorfulDialog extends React.Component {
   }
 
   render() {
+    const { footer } = this.props;
+
     return (
       <div>
         <Modal
+          // title={dialogTitle}
           {...this.props}
           visible={this.state.visible}
           onOk={() => this.handleOk()}
           onCancel={() => this.handleCancel()}
-          width={+this.props.width || undefined}
-          footer={this.props.footer || null}
+          width={+this.props.width}
+          footer={footer || null}
         >
-          {this.props.children || null}
+          {this.props.children}
         </Modal>
       </div>
     );
   }
 }
+
+ColorfulDialog.propTypes = ColorfulDialogProps;
+ColorfulDialog.displayName = 'ColorfulDialog';
 
 export default ColorfulDialog;

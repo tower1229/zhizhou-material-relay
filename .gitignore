@@ -1,6 +1,5 @@
 node_modules/
-/node_modules
-/.tmp
-/.fie
-/.vscode
-/dist
+.tmp
+.fie
+.vscode
+dist

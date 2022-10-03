@@ -8,12 +8,12 @@ export interface ColorfulButtonProps {
   /**
    * 类型
    */
-  type?: "primary" | "secondary" | "normal";
+  type?: 'primary' | 'secondary' | 'normal';
   color?: 'string';
-  style?: 'object'
+  style?: 'object';
 }
 
-const ColorfulButton: React.FC<ColorfulButtonProps> = function ColorfulButton({
+const ColorfulButton: React.FC<ColorfulButtonProps> = function ({
   type = 'primary',
   color,
   style = {},
@@ -25,12 +25,13 @@ const ColorfulButton: React.FC<ColorfulButtonProps> = function ColorfulButton({
   }
   const _otherProps = otherProps || {};
   _otherProps.style = _style;
+
   return (
-    <Button type={type} { ..._otherProps } >fusion button</Button>
+    <Button type={type} {..._otherProps}>
+      fusion button
+    </Button>
   );
 };
 
 ColorfulButton.displayName = 'ColorfulButton';
 export default ColorfulButton;
-
-
