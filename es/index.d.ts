@@ -6,6 +6,8 @@ export type { ColorfulFormProps } from './components/colorful-form';
 export { default as ColorfulForm } from './components/colorful-form';
 export type { ColorfulDialogProps } from './components/colorful-dialog';
 export { default as ColorfulDialog } from './components/colorful-dialog';
+export type { ColorfulIframeProps } from './components/colorful-dialog';
+export { default as ColorfulIframe } from './components/colorful-iframe';
 export type { ColorfulTableProps } from './components/colorful-table';
 export { default as ColorfulTable } from './components/colorful-table';
 export type { ColorfulComplexProps } from './components/colorful-complex';

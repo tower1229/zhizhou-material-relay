@@ -1,12 +1,10 @@
-
-import { logPages } from './api/pages'
+import { logPages } from './api/pages';
 let data = {
   userName: 'sdzz',
   password: 'Zz@123456',
-  loginType: 'USERNAME'
+  loginType: 'USERNAME',
 };
-logPages(data).then(res => {
-})
+logPages(data).then((res) => {});
 
 export type { ColorfulButtonProps } from './components/colorful-button';
 export { default as ColorfulButton } from './components/colorful-button';
@@ -23,14 +21,14 @@ export { default as ColorfulPage } from './components/colorful-page';
 export type { ColorfulDialogProps } from './components/colorful-dialog';
 export { default as ColorfulDialog } from './components/colorful-dialog';
 
+export type { ColorfulIframeProps } from './components/colorful-iframe';
+export { default as ColorfulIframe } from './components/colorful-iframe';
+
 export type { ColorfulTableProps } from './components/colorful-table';
-export { default as ColorfulTable } from './components/colorful-table'; 
+export { default as ColorfulTable } from './components/colorful-table';
 
 export type { ColorfulComplexProps } from './components/colorful-complex';
-export { default as ColorfulComplex } from './components/colorful-complex'; 
- 
-
-
+export { default as ColorfulComplex } from './components/colorful-complex';
 
 const bizCssPrefix = 'bizpack';
 
