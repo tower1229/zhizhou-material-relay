@@ -1,0 +1,91 @@
+{
+  "packages": [
+    {
+      "package": "moment",
+      "version": "2.24.0",
+      "urls": [
+        "https://g.alicdn.com/mylib/moment/2.24.0/min/moment.min.js"
+      ],
+      "library": "moment"
+    },
+    {
+      "package": "lodash",
+      "library": "_",
+      "urls": [
+        "https://g.alicdn.com/platform/c/lodash/4.6.1/lodash.min.js"
+      ]
+    },
+    {
+      "package": "iconfont-icons",
+      "urls": "//at.alicdn.com/t/font_2369445_ukrtsovd92r.js"
+    },
+    {
+      "package": "@ant-design/icons",
+      "version": "4.7.0",
+      "urls": [
+        "//g.alicdn.com/code/npm/@ali/ant-design-icons-cdn/4.5.0/index.umd.min.js"
+      ],
+      "library": "icons"
+    },
+    {
+      "package": "antd",
+      "version": "4.22.4",
+      "urls": [
+        "//g.alicdn.com/code/lib/antd/4.22.4/antd.min.js",
+        "//g.alicdn.com/code/lib/antd/4.22.4/antd.min.css"
+      ],
+      "library": "antd"
+    },
+    {
+      "package": "zhizhou-material-relay",
+      "version": "0.1.18",
+      "library": "ZhizhouMaterialRelay",
+      "urls": [
+        "http://116.196.125.106:18040/build/lowcode/view.js",
+        "http://116.196.125.106:18040/build/lowcode/view.css"
+      ],
+      "editUrls": [
+        "http://116.196.125.106:18040/build/lowcode/view.js",
+        "http://116.196.125.106:18040/build/lowcode/view.css"
+      ]
+    }
+  ],
+  "components": [
+    {
+      "exportName": "ZhizhouMaterialRelayMeta",
+      "npm": {
+        "package": "zhizhou-material-relay",
+        "version": "0.1.18"
+      },
+      "url": "http://116.196.125.106:18040/build/lowcode/meta.js",
+      "urls": {
+        "default": "http://116.196.125.106:18040/build/lowcode/meta.js"
+      }
+    }
+  ],
+  "sort": {
+    "groupList": [
+      "精选组件",
+      "原子组件"
+    ],
+    "categoryList": [
+      "基础元素",
+      "布局容器类",
+      "表格类",
+      "表单详情类",
+      "帮助类",
+      "对话框类",
+      "业务类",
+      "通用",
+      "引导",
+      "信息输入",
+      "信息展示",
+      "信息反馈"
+    ]
+  },
+  "groupList": [
+    "精选组件",
+    "原子组件"
+  ],
+  "ignoreComponents": {}
+}

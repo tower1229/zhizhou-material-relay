@@ -5,12 +5,29 @@ export function getPagesList(data) {
     method: 'post',
     data: data
   });
-}
+} // 表单提交
+
+export function getFormData(data) {
+  return request({
+    url: '/api/v1/component/form/load/body',
+    method: 'post',
+    data: data
+  });
+} // 表单提交
+
 export function addPages(data) {
   return request({
     url: '/api/v1/component/form/submit',
     method: 'post',
     data: data
+  });
+} // 下拉选项树或下拉列表
+
+export function getOptionListOrTree(params) {
+  return request({
+    url: '/api/v1/meta/option/list_tree',
+    method: 'get',
+    params: params
   });
 } //login
 
@@ -40,7 +57,7 @@ export function tableBody(data) {
     method: 'post',
     data: data
   });
-} //表格查询
+} //表格查询-树
 
 export function tableBodyTree(data) {
   return request({

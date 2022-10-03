@@ -4,7 +4,7 @@ export interface ColorfulButtonProps {
     /**
      * 类型
      */
-    type?: "primary" | "secondary" | "normal";
+    type?: 'primary' | 'secondary' | 'normal';
     color?: 'string';
     style?: 'object';
 }

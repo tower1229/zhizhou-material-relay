@@ -1,5 +1,7 @@
 export declare function getPagesList(data: any): import("axios").AxiosPromise<any>;
+export declare function getFormData(data: any): import("axios").AxiosPromise<any>;
 export declare function addPages(data: any): import("axios").AxiosPromise<any>;
+export declare function getOptionListOrTree(params: any): import("axios").AxiosPromise<any>;
 export declare function logPages(data: any): Promise<import("axios").AxiosResponse<any>>;
 export declare function metaInfo(params: any): import("axios").AxiosPromise<any>;
 export declare function dataTable(data: any): import("axios").AxiosPromise<any>;

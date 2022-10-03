@@ -1,0 +1,31 @@
+{
+  "meta": {
+    "npm": "zhizhou-material-relay",
+    "version": "0.1.18",
+    "name": "zhizhou-material-relay",
+    "description": "zhizhou-material-relay",
+    "jsLibrary": 1,
+    "componentLibrary": 1,
+    "platform": 1,
+    "repository": {
+      "type": "git",
+      "url": "https://e.coding.net/zxyoak/low-code/zhizhou-material-relay.git"
+    }
+  },
+  "components": [
+    {
+      "name": "ColorfulButton",
+      "title": "多彩按钮",
+      "description": "这里是多彩按钮的介绍",
+      "category": "General",
+      "homepage": "./docs/iframe.html?id=ColorfulButton--page&args=&viewMode=story"
+    },
+    {
+      "name": "ColorfulInput",
+      "title": "多彩Input",
+      "description": "这里是多彩按钮ColorfulInput的介绍",
+      "category": "General",
+      "homepage": "./docs/iframe.html?id=ColorfulInput--page&args=&viewMode=story"
+    }
+  ]
+}

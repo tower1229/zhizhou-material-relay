@@ -552,7 +552,7 @@ declare class ColorfulTable extends React.Component {
     cancelProp(): void;
     btnClick(value: any, record: any): Promise<void>;
     getMessageFuc(type: any, text: any): void;
-    getLineData(type: any, text: any): any;
+    getLineData(type: any, text: any, record: any, obj: any): any;
     getColumn(itemList: any): void;
     getTable(itemList: any, querySort: any, current: any): Promise<void>;
     getTableTree(itemList: any, parentId: any): Promise<void>;
