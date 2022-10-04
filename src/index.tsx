@@ -21,14 +21,34 @@ export { default as ColorfulPage } from './components/colorful-page';
 export type { ColorfulDialogProps } from './components/colorful-dialog';
 export { default as ColorfulDialog } from './components/colorful-dialog';
 
-export type { ColorfulIframeProps } from './components/colorful-iframe';
-export { default as ColorfulIframe } from './components/colorful-iframe';
-
 export type { ColorfulTableProps } from './components/colorful-table';
 export { default as ColorfulTable } from './components/colorful-table';
 
 export type { ColorfulComplexProps } from './components/colorful-complex';
 export { default as ColorfulComplex } from './components/colorful-complex';
+
+// layout components
+
+export type { ColorfulIframeProps } from './components/colorful-iframe';
+export { default as ColorfulIframe } from './components/colorful-iframe';
+
+export type { ColorfulContainerProps } from './components/colorful-container';
+export { default as ColorfulContainer } from './components/colorful-container';
+
+export type { ColorfulCardProps } from './components/colorful-card';
+export { default as ColorfulCard } from './components/colorful-card';
+
+export type { ColorfulTabProps } from './components/colorful-tab';
+export { default as ColorfulTab } from './components/colorful-tab';
+
+export type { ColorfulLinkBoxProps } from './components/colorful-link-box';
+export { default as ColorfulLinkBox } from './components/colorful-link-box';
+
+export type { ColorfulDrawerProps } from './components/colorful-drawer';
+export { default as ColorfulDrawer } from './components/colorful-drawer';
+
+export type { ColorfulLinkProps } from './components/colorful-link';
+export { default as ColorfulLink } from './components/colorful-link';
 
 const bizCssPrefix = 'bizpack';
 
