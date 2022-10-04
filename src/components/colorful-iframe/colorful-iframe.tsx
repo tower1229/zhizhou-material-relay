@@ -10,17 +10,21 @@ export interface ColorfulIframeProps {
   alias?: 'string';
   url?: 'string';
   autoHeight: 'boolean';
-  offset: 'object';
+  offset: {
+    height: number;
+    marginTop: number;
+  };
 }
 
 const ColorfulIframe: React.FC<ColorfulIframeProps> = function (props) {
   console.warn('ColorfulIframe=', props);
+
   return (
     <Iframe
       src={props.url}
       width="100%"
       height={props.autoHeight ? '100%' : props.offset?.height || 500}
-      style={{ marginTop: (props.offset?.marginTop || 0) + 'px' }}
+      style={{ marginTop: props.autoHeight ? 0 : `${props.offset?.marginTop || 0}px` }}
     />
   );
 };
