@@ -78,7 +78,7 @@ const ColorfulIframeMeta: ComponentMetadata = {
 };
 const snippets: Snippet[] = [
   {
-    title: 'ColorfulIframe',
+    title: 'Iframe',
     screenshot: '',
     schema: {
       componentName: 'ColorfulIframe',

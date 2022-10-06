@@ -35,6 +35,9 @@ export { default as ColorfulIframe } from './components/colorful-iframe';
 export type { ColorfulContainerProps } from './components/colorful-container';
 export { default as ColorfulContainer } from './components/colorful-container';
 
+export type { ColorfulContainerCellProps } from './components/colorful-container-cell';
+export { default as ColorfulContainerCell } from './components/colorful-container-cell';
+
 export type { ColorfulCardProps } from './components/colorful-card';
 export { default as ColorfulCard } from './components/colorful-card';
 
