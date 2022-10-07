@@ -16,69 +16,93 @@ const ColorfulCardMeta: ComponentMetadata = {
   },
   props: [
     {
-      name: 'alias',
-      title: { label: '别名' },
-      propType: { type: 'oneOfType', value: ['string', 'node'] },
-    },
-    {
-      name: 'url',
-      title: { label: 'iframe地址' },
-      propType: { type: 'oneOfType', value: ['string'] },
-    },
-    {
-      name: 'autoHeight',
-      title: { label: '高度自适应' },
-      propType: 'bool',
-      defaultValue: false,
-      setter: 'BoolSetter',
-      supportVariable: true,
-    },
-    {
-      name: 'offset',
-      title: { label: '尺寸' },
-      propType: 'object',
-      setter: {
-        componentName: 'ObjectSetter',
-        props: {
-          config: {
-            items: [
+      name: 'styleTyle',
+      title: { label: '样式' },
+      setter: [
+        {
+          componentName: 'RadioGroupSetter',
+          props: {
+            options: [
               {
-                name: 'height',
-                title: { label: '内容区高度', tip: '内容区高度' },
-                propType: { type: 'oneOfType', value: ['string', 'number'] },
-                setter: [
-                  {
-                    componentName: 'NumberSetter',
-                    initialValue: 500,
-                  },
-                ],
-                isRequired: false,
+                title: '卡片',
+                value: 'normal',
               },
               {
-                name: 'marginTop',
-                title: { label: '顶部空间', tip: '顶部空间' },
-                propType: { type: 'oneOfType', value: ['string', 'number'] },
-                setter: [
-                  {
-                    componentName: 'NumberSetter',
-                    initialValue: 0,
-                  },
-                ],
-                isRequired: false,
+                title: '透明',
+                value: 'transparent',
               },
             ],
           },
         },
-      },
+      ],
+      defaultValue: 'normal',
+      isRequired: true,
+    },
+    {
+      name: 'title',
+      title: { label: '标题' },
+      propType: { type: 'oneOfType', value: ['string'] },
+      defaultValue: '分组标题',
+    },
+    {
+      name: 'subTitle',
+      title: { label: '子标题' },
+      propType: { type: 'oneOfType', value: ['string'] },
+    },
+    {
+      name: 'description',
+      title: { label: '解释文案' },
+      propType: { type: 'oneOfType', value: ['string'] },
+    },
+    {
+      name: 'withBorder',
+      title: { label: '头部分割线' },
+      propType: 'bool',
+      defaultValue: true,
+      setter: 'BoolSetter',
+      supportVariable: true,
+    },
+    {
+      name: 'withCollapse',
+      title: { label: '收起操作' },
+      propType: 'bool',
+      defaultValue: true,
+      setter: 'BoolSetter',
+      supportVariable: true,
+    },
+    {
+      name: 'withPadding',
+      title: { label: '内容区间距' },
+      propType: 'bool',
+      defaultValue: true,
+      setter: 'BoolSetter',
+      supportVariable: true,
+    },
+    {
+      name: 'headerExt',
+      title: { label: '头部扩展' },
+      propType: { type: 'oneOfType', value: ['node'] },
     },
   ],
   configure: {
-    component: {},
+    component: {
+      isContainer: true,
+    },
+    supports: {
+      style: true,
+      events: [
+        {
+          name: 'onCollapseChange',
+          template:
+            "onCollapseChange(key,${extParams}){\n// 页签切换的回调\nconsole.log('onCollapseChange', key);}",
+        },
+      ],
+    },
   },
 };
 const snippets: Snippet[] = [
   {
-    title: 'ColorfulCard',
+    title: '分组',
     screenshot: '',
     schema: {
       componentName: 'ColorfulCard',

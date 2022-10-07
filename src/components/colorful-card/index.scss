@@ -1,1 +1,55 @@
 @import '../../variables.scss';
+
+.colorful-card-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 6px 20px;
+  line-height: 1.4;
+}
+.colorful-card-header-title {
+  color: #333;
+  font-size: 18px;
+}
+.colorful-card-header-subtitle {
+  font-size: 14px;
+  color: #999;
+}
+.colorful-card-header-extra {
+  flex: 1;
+}
+.colorful-card-toggle-btn {
+  position: relative;
+  top: 3px;
+  width: 14px;
+  height: 14px;
+  margin-left: 4px;
+  transition: all ease 0.3s;
+}
+
+// toggle
+
+.colorful-card-toggle-hide {
+  transform: rotate(180deg);
+}
+.colorful-card-body-hide {
+  display: none;
+}
+// theme
+.colorful-card-normal {
+  background: #fff;
+}
+.colorful-card-bordered .colorful-card-header:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: $border-color-base;
+}
+.colorful-card-padding .colorful-card-body {
+  padding: $base-padding;
+}

@@ -74,9 +74,9 @@ const ColorfulContainerMeta: ComponentMetadata = {
               },
             ],
           },
-          initialValue: 'row',
         },
       ],
+      defaultValue: 'row',
       isRequired: true,
     },
     {

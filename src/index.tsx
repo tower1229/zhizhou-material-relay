@@ -38,7 +38,6 @@ export { default as ColorfulContainer } from './components/colorful-container';
 export type { ColorfulContainerCellProps } from './components/colorful-container-cell';
 export { default as ColorfulContainerCell } from './components/colorful-container-cell';
 
-export type { ColorfulCardProps } from './components/colorful-card';
 export { default as ColorfulCard } from './components/colorful-card';
 
 export type { ColorfulTabProps } from './components/colorful-tab';
