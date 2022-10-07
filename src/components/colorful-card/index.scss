@@ -12,14 +12,15 @@
 .colorful-card-header-title {
   color: #333;
   font-size: 18px;
+  flex: 1;
+  overflow: hidden;
+  white-space: no-wrap;
 }
 .colorful-card-header-subtitle {
   font-size: 14px;
   color: #999;
 }
-.colorful-card-header-extra {
-  flex: 1;
-}
+
 .colorful-card-toggle-btn {
   position: relative;
   top: 3px;
@@ -27,6 +28,12 @@
   height: 14px;
   margin-left: 4px;
   transition: all ease 0.3s;
+}
+
+.colorful-card-header-extra {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 // toggle

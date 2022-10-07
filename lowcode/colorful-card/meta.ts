@@ -1,4 +1,5 @@
 import { ComponentMetadata, Snippet } from '@alilc/lowcode-types';
+import { uuid } from '../util';
 
 const ColorfulCardMeta: ComponentMetadata = {
   componentName: 'ColorfulCard',
@@ -80,8 +81,45 @@ const ColorfulCardMeta: ComponentMetadata = {
     },
     {
       name: 'headerExt',
-      title: { label: '头部扩展' },
-      propType: { type: 'oneOfType', value: ['node'] },
+      title: { label: '操作项' },
+      setter: {
+        componentName: 'ArraySetter',
+        props: {
+          itemSetter: {
+            componentName: 'ObjectSetter',
+            props: {
+              config: {
+                items: [
+                  {
+                    name: 'key',
+                    title: 'key',
+                    setter: 'StringSetter',
+                    initialValue: (val) => val || uuid(),
+                    supportVariable: true,
+                  },
+                  {
+                    name: 'text',
+                    title: '按钮文字',
+                    setter: 'StringSetter',
+                    initialValue: '操作项',
+                  },
+                  {
+                    name: 'onClick',
+                    title: '点击事件',
+                    setter: 'FunctionSetter',
+                  },
+                ],
+              },
+            },
+            initialValue: () => {
+              return {
+                key: uuid(),
+                text: '操作项',
+              };
+            },
+          },
+        },
+      },
     },
   ],
   configure: {
@@ -92,9 +130,8 @@ const ColorfulCardMeta: ComponentMetadata = {
       style: true,
       events: [
         {
-          name: 'onCollapseChange',
-          template:
-            "onCollapseChange(key,${extParams}){\n// 页签切换的回调\nconsole.log('onCollapseChange', key);}",
+          name: 'onClick',
+          template: "onClick(key,${extParams}){\n// 操作项回调\nconsole.log('onClick', key);}",
         },
       ],
     },

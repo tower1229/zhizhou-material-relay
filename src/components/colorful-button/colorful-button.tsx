@@ -28,7 +28,7 @@ const ColorfulButton: React.FC<ColorfulButtonProps> = function ({
 
   return (
     <Button type={type} {..._otherProps}>
-      fusion button
+      {otherProps.children || 'ColorfulButton'}
     </Button>
   );
 };

@@ -1,6 +1,6 @@
 import React, { createElement, useState } from 'react';
-import { Button } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
+import Button from '../colorful-button/';
 import './index.scss';
 
 export interface ColorfulCardProps {
@@ -14,7 +14,7 @@ export interface ColorfulCardProps {
   withBorder: boolean;
   withCollapse: boolean;
   withPadding: boolean;
-  headerExt?: node;
+  headerExt?: array;
 }
 
 const ColorfulCard: React.FC<ColorfulCardProps> = function (props) {
@@ -38,15 +38,26 @@ const ColorfulCard: React.FC<ColorfulCardProps> = function (props) {
             <div class="colorful-card-header-subtitle">{props.subTitle}</div>
           ) : null}
         </div>
-        <div class="colorful-card-header-extra">{props.headerExt}</div>
-        {props.withCollapse ? (
-          <Button onClick={handleToggleButtonClick}>
-            {visible ? '收起' : '展开'}
-            <DownOutlined
-              class={`colorful-card-toggle-btn colorful-card-toggle-${visible ? 'show' : 'hide'}`}
-            />
-          </Button>
-        ) : null}
+
+        <div class="colorful-card-header-extra">
+          {Array.isArray(props.headerExt)
+            ? props.headerExt.map((ext) => {
+                return (
+                  <Button key={ext.key} onClick={ext.onClick || (() => null)}>
+                    {ext.text}
+                  </Button>
+                );
+              })
+            : null}
+          {props.withCollapse ? (
+            <Button onClick={handleToggleButtonClick}>
+              {visible ? '收起' : '展开'}
+              <DownOutlined
+                class={`colorful-card-toggle-btn colorful-card-toggle-${visible ? 'show' : 'hide'}`}
+              />
+            </Button>
+          ) : null}
+        </div>
       </div>
       <div class={`colorful-card-body colorful-card-body-${visible ? 'show' : 'hide'}`}>
         {props.children}

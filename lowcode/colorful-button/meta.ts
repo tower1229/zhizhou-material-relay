@@ -120,8 +120,16 @@ const ColorfulButtonMeta: ComponentMetadata = {
           initialValue: 'object',
         },
       },
+      {
+        name: 'text',
+        title: { label: '按钮文字' },
+        propType: { type: 'oneOfType', value: ['string'] },
+        defaultValue: '按钮文字',
+      },
     ],
-    supports: {},
+    supports: {
+      style: true,
+    },
     component: {},
   },
 };
