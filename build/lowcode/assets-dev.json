@@ -38,7 +38,7 @@
     },
     {
       "package": "zhizhou-material-relay",
-      "version": "0.1.18",
+      "version": "0.1.19",
       "library": "ZhizhouMaterialRelay",
       "urls": [
         "./view.js",
@@ -55,7 +55,7 @@
       "exportName": "ZhizhouMaterialRelayMeta",
       "npm": {
         "package": "zhizhou-material-relay",
-        "version": "0.1.18"
+        "version": "0.1.19"
       },
       "url": "./meta.js",
       "urls": {

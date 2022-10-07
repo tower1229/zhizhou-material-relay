@@ -96,7 +96,7 @@ const ColorfulFormMeta: ComponentMetadata = {
           isRequired: true,
           // props: {
           //   setters: [
-          //     'BoolSetter',
+          //     "BoolSetter",
           //   ],
           // },
         },

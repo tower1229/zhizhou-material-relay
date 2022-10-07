@@ -25,7 +25,7 @@ var ColorfulButton = function ColorfulButton(_ref) {
   _otherProps.style = _style;
   return /*#__PURE__*/React.createElement(_Button, _extends({
     type: type
-  }, _otherProps), "fusion button");
+  }, _otherProps), otherProps.children || 'ColorfulButton');
 };
 
 ColorfulButton.displayName = 'ColorfulButton';
