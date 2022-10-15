@@ -1,6 +1,7 @@
 import React, { createElement, useState } from 'react';
 import { DownOutlined } from '@ant-design/icons';
-import Button from '../colorful-button/';
+import { Button, Tooltip, Popconfirm } from 'antd';
+
 import './index.scss';
 
 export interface ColorfulCardProps {
@@ -25,6 +26,10 @@ const ColorfulCard: React.FC<ColorfulCardProps> = function (props) {
     toggleVisible(!visible);
   }
 
+  function handleBtnClick(actionList) {
+    console.warn('handleBtnClick', actionList);
+  }
+
   return (
     <div
       class={`colorful-card colorful-card-${props.styleTyle} ${
@@ -41,13 +46,20 @@ const ColorfulCard: React.FC<ColorfulCardProps> = function (props) {
 
         <div class="colorful-card-header-extra">
           {Array.isArray(props.headerExt)
-            ? props.headerExt.map((ext) => {
-                return (
-                  <Button key={ext.key} onClick={ext.onClick || (() => null)}>
-                    {ext.text}
-                  </Button>
-                );
-              })
+            ? props.headerExt.map((btn, idx) => (
+                <Button
+                  key={`btn_${idx}`}
+                  onClick={
+                    btn.actionList.find((ite) => ite.name === 'onClick') !== -1
+                      ? () => handleBtnClick(btn.actionList)
+                      : () => {}
+                  }
+                  className="btn"
+                  type="primary"
+                >
+                  {btn.title}
+                </Button>
+              ))
             : null}
           {props.withCollapse ? (
             <Button onClick={handleToggleButtonClick}>
