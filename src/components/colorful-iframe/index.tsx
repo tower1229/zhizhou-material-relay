@@ -20,12 +20,19 @@ const ColorfulIframe: React.FC<ColorfulIframeProps> = function (props) {
   console.warn('ColorfulIframe=', props);
 
   return (
-    <Iframe
-      src={props.url}
-      width="100%"
-      height={props.autoHeight ? '100%' : props.offset?.height || 500}
-      style={{ marginTop: props.autoHeight ? 0 : `${props.offset?.marginTop || 0}px` }}
-    />
+    <div
+      style={{
+        marginTop: props.autoHeight ? 0 : `${props.offset?.marginTop || 0}px`,
+        height: props.autoHeight ? '100%' : props.offset?.height || 500,
+      }}
+    >
+      <Iframe
+        src={props.url}
+        width="100%"
+        height="100%"
+        style={{ pointerEvents: props.__designMode === 'design' ? 'none' : 'auto' }}
+      />
+    </div>
   );
 };
 
