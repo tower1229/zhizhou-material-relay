@@ -91,30 +91,29 @@ const ColorfulCardMeta: ComponentMetadata = {
               config: {
                 items: [
                   {
-                    name: 'key',
-                    title: 'key',
-                    setter: 'StringSetter',
-                    initialValue: (val) => val || uuid(),
-                    supportVariable: true,
-                  },
-                  {
-                    name: 'text',
+                    name: 'title',
                     title: '按钮文字',
                     setter: 'StringSetter',
-                    initialValue: '操作项',
                   },
                   {
-                    name: 'onClick',
-                    title: '点击事件',
-                    setter: 'FunctionSetter',
+                    name: 'actionList',
+                    title: '事件',
+                    setter: {
+                      componentName: 'ArraySetter',
+                      props: {
+                        itemSetter: {
+                          componentName: 'FunctionSetter',
+                        },
+                      },
+                    },
                   },
                 ],
               },
             },
             initialValue: () => {
               return {
-                key: uuid(),
-                text: '操作项',
+                title: '按钮',
+                actionList: [],
               };
             },
           },

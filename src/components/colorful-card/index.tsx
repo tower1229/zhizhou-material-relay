@@ -1,7 +1,6 @@
 import React, { createElement, useState } from 'react';
-import { DownOutlined } from '@ant-design/icons';
-import { Button, Tooltip, Popconfirm } from 'antd';
-
+import { DownOutlined, QuestionCircleFilled } from '@ant-design/icons';
+import { Button, Tooltip } from 'antd';
 import './index.scss';
 
 export interface ColorfulCardProps {
@@ -43,6 +42,13 @@ const ColorfulCard: React.FC<ColorfulCardProps> = function (props) {
             <div class="colorful-card-header-subtitle">{props.subTitle}</div>
           ) : null}
         </div>
+        <div style={{ flex: 1 }}>
+          {props.description ? (
+            <Tooltip title={props.description}>
+              <QuestionCircleFilled style={{ fontSize: '16px', color: '#999' }} />
+            </Tooltip>
+          ) : null}
+        </div>
 
         <div class="colorful-card-header-extra">
           {Array.isArray(props.headerExt)
@@ -52,9 +58,8 @@ const ColorfulCard: React.FC<ColorfulCardProps> = function (props) {
                   onClick={
                     btn.actionList.find((ite) => ite.name === 'onClick') !== -1
                       ? () => handleBtnClick(btn.actionList)
-                      : () => {}
+                      : () => console.log('onClick')
                   }
-                  className="btn"
                   type="primary"
                 >
                   {btn.title}
