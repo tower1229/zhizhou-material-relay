@@ -78,7 +78,7 @@ const ColorfulLinkBoxMeta: ComponentMetadata = {
 };
 const snippets: Snippet[] = [
   {
-    title: 'ColorfulLinkBox',
+    title: '链接块',
     screenshot: '',
     schema: {
       componentName: 'ColorfulLinkBox',

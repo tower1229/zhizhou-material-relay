@@ -78,7 +78,7 @@ const ColorfulLinkMeta: ComponentMetadata = {
 };
 const snippets: Snippet[] = [
   {
-    title: 'ColorfulLink',
+    title: '链接',
     screenshot: '',
     schema: {
       componentName: 'ColorfulLink',

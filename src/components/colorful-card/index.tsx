@@ -14,7 +14,7 @@ export interface ColorfulCardProps {
   withBorder: boolean;
   withCollapse: boolean;
   withPadding: boolean;
-  headerExt?: array;
+  headerExt?: Object[];
 }
 
 const ColorfulCard: React.FC<ColorfulCardProps> = function (props) {

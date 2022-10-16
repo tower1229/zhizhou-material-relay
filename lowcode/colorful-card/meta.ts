@@ -1,5 +1,4 @@
 import { ComponentMetadata, Snippet } from '@alilc/lowcode-types';
-import { uuid } from '../util';
 
 const ColorfulCardMeta: ComponentMetadata = {
   componentName: 'ColorfulCard',

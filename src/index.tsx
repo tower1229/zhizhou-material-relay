@@ -42,6 +42,7 @@ export { default as ColorfulCard } from './components/colorful-card';
 
 export type { ColorfulTabProps } from './components/colorful-tab';
 export { default as ColorfulTab } from './components/colorful-tab';
+export { default as ColorfulTabPane } from './components/colorful-tab.tab-pane';
 
 export type { ColorfulLinkBoxProps } from './components/colorful-link-box';
 export { default as ColorfulLinkBox } from './components/colorful-link-box';

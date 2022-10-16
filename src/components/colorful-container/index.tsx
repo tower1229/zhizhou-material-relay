@@ -1,18 +1,16 @@
 import * as React from 'react';
 import { createElement } from 'react';
 import './index.scss';
-import ContentCell from '../colorful-container-cell/';
 
 export interface ColorfulContainerProps {
   /**
    * 类型
    */
-  alias?: 'string';
-  autoHeight: 'boolean';
-  height: number;
-  gap: number;
+  alias?: String;
+  autoHeight: Boolean;
+  height: Number;
+  gap: Number;
   direction: 'column' | 'row';
-  cells: array;
 }
 
 const ColorfulContainer: React.FC<ColorfulContainerProps> = function (props) {
@@ -28,9 +26,6 @@ const ColorfulContainer: React.FC<ColorfulContainerProps> = function (props) {
         height: props.autoHeight ? '100%' : props.height || 500,
       }}
     >
-      {/* {ratioArray.map((ratio, i) => (
-        <ContentCell key={`ContentCell${i}`} flex={ratio} />
-      ))} */}
       {props.children}
     </div>
   );

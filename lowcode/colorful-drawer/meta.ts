@@ -78,7 +78,7 @@ const ColorfulDrawerMeta: ComponentMetadata = {
 };
 const snippets: Snippet[] = [
   {
-    title: 'ColorfulDrawer',
+    title: '抽屉',
     screenshot: '',
     schema: {
       componentName: 'ColorfulDrawer',
