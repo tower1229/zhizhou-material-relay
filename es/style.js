@@ -21,4 +21,5 @@ import 'antd/es/message/style';
 import 'antd/es/select/style';
 import 'antd/es/input/style';
 import 'antd/es/image/style';
+import 'antd/es/tabs/style';
 import './index.scss';

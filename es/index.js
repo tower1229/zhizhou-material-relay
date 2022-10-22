@@ -18,6 +18,7 @@ export { default as ColorfulContainer } from "./components/colorful-container";
 export { default as ColorfulContainerCell } from "./components/colorful-container-cell";
 export { default as ColorfulCard } from "./components/colorful-card";
 export { default as ColorfulTab } from "./components/colorful-tab";
+export { default as ColorfulTabPane } from "./components/colorful-tab.tab-pane";
 export { default as ColorfulLinkBox } from "./components/colorful-link-box";
 export { default as ColorfulDrawer } from "./components/colorful-drawer";
 export { default as ColorfulLink } from "./components/colorful-link";

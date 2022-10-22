@@ -4,13 +4,10 @@ export interface ColorfulTabProps {
     /**
      * 类型
      */
-    alias?: 'string';
-    url?: 'string';
-    autoHeight: 'boolean';
-    offset: {
-        height: number;
-        marginTop: number;
-    };
+    alias?: String;
+    tabs: Object[];
+    tabType: 'line' | 'card' | 'text' | 'capsule';
+    headerExt?: Object[];
 }
 declare const ColorfulTab: React.FC<ColorfulTabProps>;
 export default ColorfulTab;

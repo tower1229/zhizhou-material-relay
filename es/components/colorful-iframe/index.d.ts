@@ -4,12 +4,12 @@ export interface ColorfulIframeProps {
     /**
      * 类型
      */
-    alias?: 'string';
-    url?: 'string';
-    autoHeight: 'boolean';
+    alias?: String;
+    url?: String;
+    autoHeight: Boolean;
     offset: {
-        height: number;
-        marginTop: number;
+        height: Number;
+        marginTop: Number;
     };
 }
 declare const ColorfulIframe: React.FC<ColorfulIframeProps>;
