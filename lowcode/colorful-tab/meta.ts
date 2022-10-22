@@ -70,6 +70,7 @@ const ColorfulTabMeta: ComponentMetadata = {
             return {
               key,
               tab: child.getPropValue('tab'),
+              title: child.getPropValue('tab'),
             };
           });
           return map;
@@ -90,7 +91,7 @@ const ColorfulTabMeta: ComponentMetadata = {
             (child) => {
               const key = String(child.getPropValue('key'));
               if (Object.hasOwnProperty.call(map, key)) {
-                child.setPropValue('tab', map[key].tab);
+                child.setPropValue('tab', map[key].tab || map[key].title);
                 delete map[key];
                 return false;
               }
