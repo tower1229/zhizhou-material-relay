@@ -8,7 +8,7 @@ export interface ColorfulTabProps {
    * 类型
    */
   alias?: String;
-  tabTags: Object[];
+  tabs: Object[];
   tabType: 'line' | 'card' | 'text' | 'capsule';
   headerExt?: Object[];
 }
@@ -36,7 +36,15 @@ const ColorfulTab: React.FC<ColorfulTabProps> = function (props: ColorfulTabProp
     </div>
   );
 
-  return <OriginalTabs {...props} tabBarExtraContent={tabBarExtraContent} />;
+  const customProps = {
+    ...props,
+    onChange: (activeKey) => {
+      console.log(activeKey, props.tabs);
+      typeof props.onChange === 'function' && props.onChange();
+    },
+  };
+
+  return <OriginalTabs {...customProps} tabBarExtraContent={tabBarExtraContent} />;
 };
 
 ColorfulTab.displayName = 'ColorfulTab';

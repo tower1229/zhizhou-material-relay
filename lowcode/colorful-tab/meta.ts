@@ -175,28 +175,18 @@ const ColorfulTabMeta: ComponentMetadata = {
                 value: 'card',
               },
               {
-                title: '可编辑',
-                value: 'editable-card',
+                title: '文本型',
+                value: 'cumstom-text',
+              },
+              {
+                title: '胶囊型',
+                value: 'cumstom-capsule',
               },
             ],
           },
         },
       ],
       defaultValue: 'line',
-    },
-    {
-      name: 'hideAdd',
-      title: {
-        label: '隐藏加号',
-        tip: '是否隐藏加号图标，在`type="editable-card"`时有效',
-      },
-      condition(target) {
-        return target.getProps().getPropValue('type') === 'editable-card';
-      },
-      propType: 'bool',
-      setter: 'BoolSetter',
-      defaultValue: false,
-      supportVariable: true,
     },
     {
       name: 'centered',
