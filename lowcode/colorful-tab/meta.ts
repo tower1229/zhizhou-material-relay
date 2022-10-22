@@ -70,9 +70,6 @@ const ColorfulTabMeta: ComponentMetadata = {
             return {
               key,
               tab: child.getPropValue('tab'),
-              closeable: child.getPropValue('closeable'),
-              disabled: child.getPropValue('disabled'),
-              forceRender: child.getPropValue('forceRender'),
             };
           });
           return map;
@@ -94,9 +91,6 @@ const ColorfulTabMeta: ComponentMetadata = {
               const key = String(child.getPropValue('key'));
               if (Object.hasOwnProperty.call(map, key)) {
                 child.setPropValue('tab', map[key].tab);
-                child.setPropValue('closeable', map[key].closeable);
-                child.setPropValue('disabled', map[key].disabled);
-                child.setPropValue('forceRender', map[key].forceRender);
                 delete map[key];
                 return false;
               }
@@ -116,10 +110,10 @@ const ColorfulTabMeta: ComponentMetadata = {
             },
             (child1, child2) => {
               const a = value.findIndex(
-                (item) => String(item.key) === String(child1.getPropValue('key')),
+                (item) => String(item.key) === String(child1.getPropValue('key') || child1.id),
               );
               const b = value.findIndex(
-                (item) => String(item.key) === String(child2.getPropValue('key')),
+                (item) => String(item.key) === String(child2.getPropValue('key') || child2.id),
               );
               return a - b;
             },

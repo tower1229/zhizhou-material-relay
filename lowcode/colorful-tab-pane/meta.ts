@@ -17,188 +17,57 @@ const ColorfulTabPaneMeta: ComponentMetadata = {
   configure: {
     props: [
       {
+        name: 'key',
         title: {
-          label: {
-            type: 'i18n',
-            'en-US': 'tab',
-            'zh-CN': 'tab',
-          },
+          label: 'key',
+          tip: 'key',
         },
+        propType: 'string',
+        setter: 'StringSetter',
+        supportVariable: true,
+      },
+      {
         name: 'tab',
-        setter: {
-          componentName: 'SlotSetter',
-          props: {
-            mode: 'node',
-          },
-          isRequired: false,
-          initialValue: {
-            type: 'JSSlot',
-            value: [],
-          },
+        title: {
+          label: '标题',
+          tip: '标题',
         },
+        propType: 'string',
+        setter: 'StringSetter',
+        supportVariable: true,
       },
       {
-        title: {
-          label: {
-            type: 'i18n',
-            'en-US': 'disabled',
-            'zh-CN': 'disabled',
-          },
-        },
         name: 'disabled',
-        setter: {
-          componentName: 'BoolSetter',
-          isRequired: false,
-          initialValue: false,
+        title: {
+          label: '是否禁用',
+          tip: '是否为禁用状态',
         },
+        propType: 'bool',
+        defaultValue: false,
+        setter: 'BoolSetter',
+        supportVariable: true,
       },
       {
-        title: {
-          label: {
-            type: 'i18n',
-            'en-US': 'forceRender',
-            'zh-CN': 'forceRender',
-          },
-        },
         name: 'forceRender',
-        setter: {
-          componentName: 'BoolSetter',
-          isRequired: false,
-          initialValue: false,
-        },
-      },
-      {
         title: {
-          label: {
-            type: 'i18n',
-            'en-US': 'closable',
-            'zh-CN': 'closable',
-          },
+          label: '隐藏时保留',
+          tip: '被隐藏时是否渲染 DOM 结构',
         },
-        name: 'closable',
-        setter: {
-          componentName: 'BoolSetter',
-          isRequired: false,
-          initialValue: false,
-        },
-      },
-      {
-        title: {
-          label: {
-            type: 'i18n',
-            'en-US': 'closeIcon',
-            'zh-CN': 'closeIcon',
-          },
-        },
-        name: 'closeIcon',
-        setter: {
-          componentName: 'SlotSetter',
-          props: {
-            mode: 'node',
-          },
-          isRequired: false,
-          initialValue: {
-            type: 'JSSlot',
-            value: [],
-          },
-        },
-      },
-      {
-        title: {
-          label: {
-            type: 'i18n',
-            'en-US': 'prefixCls',
-            'zh-CN': 'prefixCls',
-          },
-        },
-        name: 'prefixCls',
-        setter: {
-          componentName: 'StringSetter',
-          isRequired: false,
-          initialValue: '',
-        },
-      },
-      {
-        title: {
-          label: {
-            type: 'i18n',
-            'en-US': 'tabKey',
-            'zh-CN': 'tabKey',
-          },
-        },
-        name: 'tabKey',
-        setter: {
-          componentName: 'StringSetter',
-          isRequired: false,
-          initialValue: '',
-        },
-      },
-      {
-        title: {
-          label: {
-            type: 'i18n',
-            'en-US': 'id',
-            'zh-CN': 'id',
-          },
-        },
-        name: 'id',
-        setter: {
-          componentName: 'StringSetter',
-          isRequired: false,
-          initialValue: '',
-        },
-      },
-      {
-        title: {
-          label: {
-            type: 'i18n',
-            'en-US': 'animated',
-            'zh-CN': 'animated',
-          },
-        },
-        name: 'animated',
-        setter: {
-          componentName: 'BoolSetter',
-          isRequired: false,
-          initialValue: false,
-        },
-      },
-      {
-        title: {
-          label: {
-            type: 'i18n',
-            'en-US': 'active',
-            'zh-CN': 'active',
-          },
-        },
-        name: 'active',
-        setter: {
-          componentName: 'BoolSetter',
-          isRequired: false,
-          initialValue: false,
-        },
-      },
-      {
-        title: {
-          label: {
-            type: 'i18n',
-            'en-US': 'destroyInactiveTabPane',
-            'zh-CN': 'destroyInactiveTabPane',
-          },
-        },
-        name: 'destroyInactiveTabPane',
-        setter: {
-          componentName: 'BoolSetter',
-          isRequired: false,
-          initialValue: false,
-        },
+        propType: 'bool',
+        setter: 'BoolSetter',
+        supportVariable: true,
       },
     ],
     supports: {
       className: true,
       style: true,
     },
-    component: {},
+    component: {
+      isContainer: true,
+      nestingRule: {
+        parentWhitelist: ['Tab'],
+      },
+    },
   },
 };
 
