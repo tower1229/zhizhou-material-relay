@@ -64,7 +64,7 @@ const ColorfulTabMeta: ComponentMetadata = {
         },
       },
       extraProps: {
-        getValue(target, fieldValue) {
+        getValue(target) {
           const map = target.node.children.map((child) => {
             const key = child.getPropValue('key') ? String(child.getPropValue('key')) : child.id;
             return {
@@ -89,7 +89,7 @@ const ColorfulTabMeta: ComponentMetadata = {
 
           node.children.mergeChildren(
             (child) => {
-              const key = String(child.getPropValue('key'));
+              const key = String(child.getPropValue('key') || child.id);
               if (Object.hasOwnProperty.call(map, key)) {
                 child.setPropValue('tab', map[key].tab || map[key].title);
                 delete map[key];

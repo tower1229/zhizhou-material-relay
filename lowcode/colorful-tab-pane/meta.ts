@@ -65,7 +65,7 @@ const ColorfulTabPaneMeta: ComponentMetadata = {
     component: {
       isContainer: true,
       nestingRule: {
-        parentWhitelist: ['Tab'],
+        parentWhitelist: ['ColorfulTab'],
       },
     },
   },
