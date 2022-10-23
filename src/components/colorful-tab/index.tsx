@@ -9,7 +9,7 @@ export interface ColorfulTabProps {
    */
   alias?: String;
   tabs: Object[];
-  tabType: 'line' | 'card' | 'text' | 'capsule';
+  type: 'line' | 'card' | 'cumstom-text' | 'cumstom-capsule';
   headerExt?: Object[];
 }
 
@@ -39,12 +39,24 @@ const ColorfulTab: React.FC<ColorfulTabProps> = function (props: ColorfulTabProp
   const customProps = {
     ...props,
     onChange: (activeKey) => {
-      console.log(activeKey, props.tabs);
+      const targetItem = props.tabs.filter((tab) => tab.key === activeKey).length
+        ? props.tabs.filter((tab) => tab.key === activeKey)[0]
+        : null;
+      if (targetItem) {
+        console.log('Tabs trigger change:', activeKey, targetItem);
+      }
+
       typeof props.onChange === 'function' && props.onChange();
     },
   };
 
-  return <OriginalTabs {...customProps} tabBarExtraContent={tabBarExtraContent} />;
+  return (
+    <OriginalTabs
+      {...customProps}
+      tabBarExtraContent={tabBarExtraContent}
+      className={props.type.indexOf('cumstom-') === 0 ? props.type : ''}
+    />
+  );
 };
 
 ColorfulTab.displayName = 'ColorfulTab';
