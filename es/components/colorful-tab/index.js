@@ -24,13 +24,23 @@ var ColorfulTab = function ColorfulTab(props) {
 
   var customProps = _extends({}, props, {
     onChange: function onChange(activeKey) {
-      console.log(activeKey, props.tabs);
+      var targetItem = props.tabs.filter(function (tab) {
+        return tab.key === activeKey;
+      }).length ? props.tabs.filter(function (tab) {
+        return tab.key === activeKey;
+      })[0] : null;
+
+      if (targetItem) {
+        console.log('Tabs trigger change:', activeKey, targetItem);
+      }
+
       typeof props.onChange === 'function' && props.onChange();
     }
   });
 
   return /*#__PURE__*/React.createElement(_Tabs, _extends({}, customProps, {
-    tabBarExtraContent: tabBarExtraContent
+    tabBarExtraContent: tabBarExtraContent,
+    className: props.type.indexOf('cumstom-') === 0 ? props.type : ''
   }));
 };
 

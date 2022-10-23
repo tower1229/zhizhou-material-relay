@@ -4,3 +4,50 @@
   align-items: center;
   gap: 8px;
 }
+
+// cumstom-text
+.cumstom-text .ant-tabs-nav:before,
+.cumstom-text .ant-tabs-ink-bar {
+  display: none !important;
+}
+
+.cumstom-text .ant-tabs-tab:not(:first-child):after {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: calc(50% - 4px);
+  width: 1px;
+  height: 8px;
+  background-color: #dcdee3;
+}
+
+// cumstom-capsule
+.cumstom-capsule .ant-tabs-nav:before,
+.cumstom-capsule .ant-tabs-ink-bar {
+  display: none !important;
+}
+
+.cumstom-capsule .ant-tabs-nav-list {
+  border-radius: 3px;
+  border: 1px solid #c4c6cf;
+  overflow: hidden;
+}
+
+.cumstom-capsule .ant-tabs-tab {
+  margin: 0 0 0 -1px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.cumstom-capsule .ant-tabs-tab:not(:first-child) {
+  border-left: 1px solid #c4c6cf;
+}
+
+.cumstom-capsule .ant-tabs-tab-active {
+  color: #fff;
+  background-color: #5584ff;
+}
+
+.cumstom-capsule .ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: inherit;
+}

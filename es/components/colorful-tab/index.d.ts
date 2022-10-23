@@ -6,7 +6,7 @@ export interface ColorfulTabProps {
      */
     alias?: String;
     tabs: Object[];
-    tabType: 'line' | 'card' | 'text' | 'capsule';
+    type: 'line' | 'card' | 'cumstom-text' | 'cumstom-capsule';
     headerExt?: Object[];
 }
 declare const ColorfulTab: React.FC<ColorfulTabProps>;
