@@ -16,64 +16,32 @@ const ColorfulLinkMeta: ComponentMetadata = {
   },
   props: [
     {
-      name: 'alias',
-      title: { label: '别名' },
-      propType: { type: 'oneOfType', value: ['string', 'node'] },
-    },
-    {
-      name: 'url',
-      title: { label: 'iframe地址' },
-      propType: { type: 'oneOfType', value: ['string'] },
-    },
-    {
-      name: 'autoHeight',
-      title: { label: '高度自适应' },
-      propType: 'bool',
-      defaultValue: false,
-      setter: 'BoolSetter',
+      name: 'children',
+      title: { label: '内容', tip: '内容' },
+      propType: 'string',
+      setter: ['StringSetter', 'VariableSetter'],
       supportVariable: true,
+      defaultValue: '链接文字',
     },
     {
-      name: 'offset',
-      title: { label: '尺寸' },
-      propType: 'object',
-      setter: {
-        componentName: 'ObjectSetter',
-        props: {
-          config: {
-            items: [
-              {
-                name: 'height',
-                title: { label: '内容区高度', tip: '内容区高度' },
-                propType: { type: 'oneOfType', value: ['string', 'number'] },
-                setter: [
-                  {
-                    componentName: 'NumberSetter',
-                    initialValue: 500,
-                  },
-                ],
-                isRequired: false,
-              },
-              {
-                name: 'marginTop',
-                title: { label: '顶部空间', tip: '顶部空间' },
-                propType: { type: 'oneOfType', value: ['string', 'number'] },
-                setter: [
-                  {
-                    componentName: 'NumberSetter',
-                    initialValue: 0,
-                  },
-                ],
-                isRequired: false,
-              },
-            ],
-          },
-        },
+      name: 'href',
+      title: { label: '跳转链接', tip: '跳转链接' },
+      propType: 'string',
+      setter: 'StringSetter',
+      defaultValue: '',
+    },
+    {
+      name: 'target',
+      title: { label: '跳转位置', tip: '在何处显示链接的资源' },
+      propType: {
+        type: 'oneOf',
+        value: ['_self', '_blank', '_parent', '_top'],
       },
+      defaultValue: '_self',
     },
   ],
   configure: {
-    component: {},
+    supports: { style: true },
   },
 };
 const snippets: Snippet[] = [

@@ -52,6 +52,8 @@ export { default as ColorfulDrawer } from './components/colorful-drawer';
 export type { ColorfulLinkProps } from './components/colorful-link';
 export { default as ColorfulLink } from './components/colorful-link';
 
+export { default as ColorfulTree } from './components/colorful-tree';
+
 const bizCssPrefix = 'bizpack';
 
 export { bizCssPrefix };

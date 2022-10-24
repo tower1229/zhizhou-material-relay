@@ -1,6 +1,9 @@
-import * as React from 'react';
+import { Typography } from 'antd';
+import React from 'react';
 import { createElement } from 'react';
 import './index.scss';
+
+const { Link } = Typography;
 
 export interface ColorfulLinkProps {
   /**
@@ -18,7 +21,7 @@ export interface ColorfulLinkProps {
 const ColorfulLink: React.FC<ColorfulLinkProps> = function (props) {
   console.warn('ColorfulLink=', props);
 
-  return <div>{JSON.stringify(props)}</div>;
+  return <Link {...props} />;
 };
 
 ColorfulLink.displayName = 'ColorfulLink';
