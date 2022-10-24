@@ -1,26 +1,15 @@
 import * as React from 'react';
 import { createElement } from 'react';
+import { Drawer as OriginalDrawer } from 'antd';
 import './index.scss';
 
-export interface ColorfulDrawerProps {
-  /**
-   * 类型
-   */
-  alias?: 'string';
-  url?: 'string';
-  autoHeight: 'boolean';
-  offset: {
-    height: number;
-    marginTop: number;
-  };
-}
-
-const ColorfulDrawer: React.FC<ColorfulDrawerProps> = function (props) {
+const ColorfulDrawer: any = (props: any) => {
   console.warn('ColorfulDrawer=', props);
-
-  return <div>{JSON.stringify(props)}</div>;
+  const innerProps: any = {};
+  if (props.__designMode === 'design') {
+    innerProps.visible = true;
+  }
+  return <OriginalDrawer {...props} {...innerProps} />;
 };
-
-ColorfulDrawer.displayName = 'ColorfulDrawer';
 
 export default ColorfulDrawer;

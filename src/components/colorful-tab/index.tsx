@@ -54,7 +54,7 @@ const ColorfulTab: React.FC<ColorfulTabProps> = function (props: ColorfulTabProp
     <OriginalTabs
       {...customProps}
       tabBarExtraContent={tabBarExtraContent}
-      className={props.type.indexOf('cumstom-') === 0 ? props.type : ''}
+      className={props.type && props.type.indexOf('cumstom-') === 0 ? props.type : ''}
     />
   );
 };
