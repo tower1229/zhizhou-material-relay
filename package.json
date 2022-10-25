@@ -1,6 +1,6 @@
 {
   "name": "zhizhou-material-relay",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "description": "zhizhou-material-relay",
   "main": "lib/index.js",
   "module": "es/index.js",

@@ -5,25 +5,17 @@ import './index.scss';
 
 const { Link } = Typography;
 
-export interface ColorfulLinkProps {
-  /**
-   * 类型
-   */
-  alias?: 'string';
-  url?: 'string';
-  autoHeight: 'boolean';
-  offset: {
-    height: number;
-    marginTop: number;
-  };
-}
-
-const ColorfulLink: React.FC<ColorfulLinkProps> = function (props) {
+const ColorfulLink: any = (props: any) => {
   console.warn('ColorfulLink=', props);
 
-  return <Link {...props} />;
-};
+  function handleClick(e) {
+    if (props.type === 'inside') {
+      e.preventDefault();
+      console.log(props.route);
+    }
+  }
 
-ColorfulLink.displayName = 'ColorfulLink';
+  return <Link {...props} onClick={handleClick} />;
+};
 
 export default ColorfulLink;
