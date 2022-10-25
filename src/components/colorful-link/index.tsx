@@ -9,9 +9,19 @@ const ColorfulLink: any = (props: any) => {
   console.warn('ColorfulLink=', props);
 
   function handleClick(e) {
+    // 自定义事件
+    if (Array.isArray(props.clickHandler)) {
+      props.clickHandler.forEach((handler) => {
+        Array.isArray(handler.actionList) &&
+          handler.actionList.forEach((action) => {
+            console.log('ColorfulLink 自定义事件：', action);
+          });
+      });
+    }
     if (props.type === 'inside') {
+      // 内部链接
       e.preventDefault();
-      console.log(props.route);
+      console.log('ColorfulLink route:', props.route);
     }
   }
 
