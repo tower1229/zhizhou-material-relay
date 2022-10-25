@@ -40,7 +40,7 @@ var ColorfulTab = function ColorfulTab(props) {
 
   return /*#__PURE__*/React.createElement(_Tabs, _extends({}, customProps, {
     tabBarExtraContent: tabBarExtraContent,
-    className: props.type.indexOf('cumstom-') === 0 ? props.type : ''
+    className: props.type && props.type.indexOf('cumstom-') === 0 ? props.type : ''
   }));
 };
 

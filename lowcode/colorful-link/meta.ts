@@ -24,11 +24,48 @@ const ColorfulLinkMeta: ComponentMetadata = {
       defaultValue: '链接文字',
     },
     {
+      name: 'type',
+      title: { label: '' },
+      propType: { type: 'oneOf', value: ['inside', 'outside'] },
+      defaultValue: 'inside',
+      setter: {
+        componentName: 'RadioGroupSetter',
+        props: {
+          options: [
+            {
+              title: '内部链接',
+              value: 'inside',
+            },
+            {
+              title: '外部链接',
+              value: 'outside',
+            },
+          ],
+        },
+      },
+    },
+    {
+      name: 'route',
+      title: { label: '链接地址' },
+      propType: 'string',
+      setter: ['StringSetter'],
+      condition: {
+        type: 'JSFunction',
+        value:
+          "condition(target) {\n          return target.getProps().getPropValue('type') === 'inside';\n        }",
+      },
+    },
+    {
       name: 'href',
       title: { label: '跳转链接', tip: '跳转链接' },
       propType: 'string',
       setter: 'StringSetter',
       defaultValue: '',
+      condition: {
+        type: 'JSFunction',
+        value:
+          "condition(target) {\n          return target.getProps().getPropValue('type') === 'outside';\n        }",
+      },
     },
     {
       name: 'target',
@@ -38,6 +75,16 @@ const ColorfulLinkMeta: ComponentMetadata = {
         value: ['_self', '_blank', '_parent', '_top'],
       },
       defaultValue: '_self',
+      condition: {
+        type: 'JSFunction',
+        value:
+          "condition(target) {\n          return target.getProps().getPropValue('type') === 'outside';\n        }",
+      },
+    },
+    {
+      name: 'clickHandler',
+      title: { label: '点击事件' },
+      setter: 'FunctionSetter',
     },
   ],
   configure: {

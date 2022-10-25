@@ -36,7 +36,7 @@ const ColorfulDrawerMeta: ComponentMetadata = {
       },
       defaultValue: 'right',
       setter: {
-        componentName: 'SelectSetter',
+        componentName: 'RadioGroupSetter',
         props: {
           options: [
             {

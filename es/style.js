@@ -22,4 +22,7 @@ import 'antd/es/select/style';
 import 'antd/es/input/style';
 import 'antd/es/image/style';
 import 'antd/es/tabs/style';
+import 'antd/es/drawer/style';
+import 'antd/es/typography/style';
+import 'antd/es/tree/style';
 import './index.scss';
