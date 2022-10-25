@@ -6,5 +6,4 @@ var ColorfulLinkBox = function ColorfulLinkBox(props) {
   return /*#__PURE__*/React.createElement("div", null, JSON.stringify(props));
 };
 
-ColorfulLinkBox.displayName = 'ColorfulLinkBox';
 export default ColorfulLinkBox;
