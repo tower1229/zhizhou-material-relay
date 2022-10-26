@@ -21,7 +21,19 @@ const ColorfulLink: any = (props: any) => {
     if (props.type === 'inside') {
       // 内部链接
       e.preventDefault();
-      console.log('ColorfulLink route:', props.route);
+
+      if (props.route) {
+        let routeAddress = `${props.route}`;
+
+        if (Array.isArray(props.params)) {
+          routeAddress += `?${props.params.map((p) => `${p.key}=${p.value}`).join('&')}`;
+        }
+
+        console.warn('routeAddress=', routeAddress);
+        window.open(routeAddress);
+      } else {
+        console.warn('ColorfulLink route error:', props.route, props.params);
+      }
     }
   }
 

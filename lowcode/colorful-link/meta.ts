@@ -56,6 +56,44 @@ const ColorfulLinkMeta: ComponentMetadata = {
       },
     },
     {
+      name: 'params',
+      title: {
+        label: '携带参数',
+      },
+      propType: 'string',
+      setter: {
+        componentName: 'ArraySetter',
+        props: {
+          itemSetter: {
+            componentName: 'ObjectSetter',
+            props: {
+              config: {
+                items: [
+                  {
+                    name: 'key',
+                    title: 'key',
+                    setter: 'StringSetter',
+                    supportVariable: true,
+                  },
+                  {
+                    name: 'value',
+                    title: 'value',
+                    setter: 'StringSetter',
+                    supportVariable: true,
+                  },
+                ],
+              },
+            },
+          },
+        },
+      },
+      condition: {
+        type: 'JSFunction',
+        value:
+          "condition(target) {\n          return target.getProps().getPropValue('type') === 'inside';\n        }",
+      },
+    },
+    {
       name: 'href',
       title: { label: '跳转链接', tip: '跳转链接' },
       propType: 'string',
@@ -85,6 +123,9 @@ const ColorfulLinkMeta: ComponentMetadata = {
       name: 'clickHandler',
       title: { label: '点击事件' },
       setter: 'FunctionSetter',
+      extraProps: {
+        display: 'block',
+      },
     },
   ],
   configure: {
