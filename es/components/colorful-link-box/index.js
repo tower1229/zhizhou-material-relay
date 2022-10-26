@@ -32,6 +32,17 @@ var ColorfulLinkBox = function ColorfulLinkBox(props) {
       } else {
         console.warn('ColorfulLinkBox route error:', props.route, props.params);
       }
+    } else if (props.type === 'outside') {
+      // 外部链接
+      if (props.href) {
+        if (props.target === '_blank') {
+          window.open(props.href);
+        } else {
+          window.location.href = props.href;
+        }
+      } else {
+        console.warn('ColorfulLinkBox href error:', props.href, props.target);
+      }
     }
   }
 
