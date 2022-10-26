@@ -20,7 +20,21 @@ var ColorfulLink = function ColorfulLink(props) {
     if (props.type === 'inside') {
       // 内部链接
       e.preventDefault();
-      console.log('ColorfulLink route:', props.route);
+
+      if (props.route) {
+        var routeAddress = "" + props.route;
+
+        if (Array.isArray(props.params)) {
+          routeAddress += "?" + props.params.map(function (p) {
+            return p.key + "=" + p.value;
+          }).join('&');
+        }
+
+        console.warn('routeAddress=', routeAddress);
+        window.open(routeAddress);
+      } else {
+        console.warn('ColorfulLink route error:', props.route, props.params);
+      }
     }
   }
 
